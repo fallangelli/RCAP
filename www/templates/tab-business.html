@@ -1,0 +1,90 @@
+<ion-view view-title="信息服务">
+    <ion-content>
+        <div class="row row-top">
+            <div class="col">
+                <div class="item item-avatar">
+                    <img src="./img/ask.png">
+
+                    <h2>申请</h2>
+
+                    <p>填写验证信息，申请查看个人信用记录</p>
+                </div>
+            </div>
+            <div class="col">
+                <div class="item item-avatar">
+                    <img src="./img/replay.png">
+
+                    <h2>查看</h2>
+
+                    <p>查看审核回复</p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="list row">
+            <div class="col col-center">
+                <div class="item item-divider">
+                    进行中的申请
+                </div>
+
+                <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="business in curr_business"
+                          type="item-text-wrap" href="#/tab/business/{{business.id}}">
+
+
+                    <img ng-if="business.type=='10001'" src="./img/p_report.png">
+                    <img ng-if="business.type=='10002'" src="./img/p_info.png">
+
+                    <h2>{{business.name}} <i style="color: #69717d;font-size: 14px">{{business.state}}</i></h2>
+
+                    <p>{{business.time}}</p>
+
+
+                    <i class="icon ion-chevron-right icon-accessory"></i>
+
+                    <ion-option-button class="button-assertive" ng-click="remove(business.id)">
+                        Delete
+                    </ion-option-button>
+                </ion-item>
+
+
+                <div class="item item-divider">
+                    已完成的申请
+                </div>
+
+                <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="business in his_buisness"
+                          type="item-text-wrap" href="#/tab/business/{{business.id}}">
+
+                    <img ng-if="business.type=='10001'" src="./img/p_report.png">
+                    <img ng-if="business.type=='10002'" src="./img/p_info.png">
+
+                    <h2>{{business.name}} <i style="color: #69717d;font-size: 14px">{{business.state}}</i></h2>
+
+                    <p>{{business.time}}</p>
+
+                    <i class="icon ion-chevron-right icon-accessory"></i>
+
+                    <ion-option-button class="button-assertive" ng-click="remove(business.id)">
+                        Delete
+                    </ion-option-button>
+                </ion-item>
+            </div>
+
+        </div>
+        <!--<ion-list>-->
+        <!--<ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="business in curr_business"-->
+        <!--type="item-text-wrap" href="#/tab/business/{{business.id}}">-->
+        <!--&lt;!&ndash;<img ng-src="{{business.face}}">&ndash;&gt;-->
+
+        <!--<h2>{{business.name}}</h2>-->
+
+        <!--<p>{{business.lastText}}</p>-->
+        <!--<i class="icon ion-chevron-right icon-accessory"></i>-->
+
+        <!--<ion-option-button class="button-assertive" ng-click="remove(business.id)">-->
+        <!--Delete-->
+        <!--</ion-option-button>-->
+        <!--</ion-item>-->
+        <!--</ion-list>-->
+    </ion-content>
+</ion-view>

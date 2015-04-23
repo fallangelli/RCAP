@@ -1,0 +1,91 @@
+<link href="css/swipe.css" rel="stylesheet" type="text/css"/>
+
+<style>
+    .swipe {
+        overflow: hidden;
+        visibility: hidden;
+        position: relative;
+    }
+
+    .swipe-wrap {
+        overflow: hidden;
+        position: relative;
+    }
+
+    .swipe-wrap > figure {
+        float: left;
+        width: 100%;
+        position: relative;
+    }
+</style>
+
+<ion-view view-title="个人信用信息服务平台">
+    <ion-content>
+
+        <div class="page-swipe">
+            <header>
+                <div id="slider" class="swipe">
+                    <div class="swipe-wrap">
+                        <figure>
+                            <div class="wrap">
+                                <div class="item item-image">
+                                    <img src="./img/slides/th1.png">
+                                </div>
+                            </div>
+                        </figure>
+                        <figure>
+                            <div class="wrap">
+                                <div class="item item-image">
+                                    <img src="./img/slides/th2.jpg">
+                                </div>
+                            </div>
+                        </figure>
+                        <figure>
+                            <div class="wrap">
+                                <div class="item item-image">
+                                    <img src="./img/slides/th3.jpg">
+                                </div>
+                            </div>
+                        </figure>
+                    </div>
+                </div>
+                <nav>
+                    <ul id="position">
+                        <li class="on"></li>
+                        <li class=""></li>
+                        <li class=""></li>
+                    </ul>
+                </nav>
+            </header>
+        </div>
+
+
+        <div class="list card">
+            <a href="#" class="item item-icon-left item-text-wrap">
+                <i class="icon ion-home"></i>
+
+                <h2>三种信用信息产品</h2>
+
+                <p>针对不同的用户需求，提供个人信用信息提示，个人信用信息概要，个人信用报告三种信用信息产品。</p>
+            </a>
+
+            <a href="#" class="item item-icon-left item-text-wrap">
+                <i class="icon ion-wifi"></i>
+
+                <h2>多种验证方式</h2>
+
+                <p>采用银行卡验证、数字证书验证、问题验证等多种验证方式，确保每位用户都能获得便捷验证体验。</p>
+            </a>
+
+            <a href="#" class="item item-icon-left item-text-wrap">
+                <i class="icon ion-card"></i>
+
+                <h2>以保护信息安全为前提</h2>
+
+                <p>严格的身份验证，多因子校验措施，确保信用信息安全。</p>
+            </a>
+
+        </div>
+
+    </ion-content>
+</ion-view>
