@@ -26,7 +26,13 @@ angular.module('rcap.controllers', [])
     })
 
     .controller('BusinessDetailCtrl', function ($scope, $stateParams, Business) {
+
         $scope.buisness = Business.get_his_business($stateParams.businessId);
+    })
+
+    .controller('ApplyCtrl', function ($scope) {
+        console.log('Doing ApplyCtrl', $scope.loginData);
+        //$scope.buisness = Business.get_his_business($stateParams.businessId);
     })
 
     .controller('AccountCtrl', function ($scope) {

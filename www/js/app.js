@@ -29,16 +29,17 @@ angular.module('rcap', ['ionic', 'rcap.controllers', 'rcap.services'])
         // Each state's controller can be found in controllers.js
         $stateProvider
 
+
             // setup an abstract state for the tabs directive
-            .state('tab', {
-                url: "/tab",
+            .state('rcap', {
+                url: "/rcap",
                 abstract: true,
                 templateUrl: "templates/tabs.html"
             })
 
             // Each tab has its own nav history stack:
 
-            .state('tab.dash', {
+            .state('rcap.dash', {
                 url: '/dash',
                 views: {
                     'tab-dash': {
@@ -48,7 +49,43 @@ angular.module('rcap', ['ionic', 'rcap.controllers', 'rcap.services'])
                 }
             })
 
-            .state('tab.business', {
+            .state('select', {
+                url: '/apply/type-select',
+                templateUrl: 'templates/apply/type-select.html',
+                controller: 'ApplyCtrl'
+            })
+
+            .state('identity-qa', {
+                url: '/apply/identity-qa',
+                templateUrl: 'templates/apply/identity-qa.html',
+                controller: 'ApplyCtrl'
+            })
+
+            .state('apply-result', {
+                url: '/apply/apply-result',
+                templateUrl: 'templates/apply/apply-result.html',
+                controller: 'ApplyCtrl'
+            })
+
+            .state('result-select', {
+                url: '/result/result-select',
+                templateUrl: 'templates/result/result-select.html',
+                controller: 'ApplyCtrl'
+            })
+
+            .state('result-tips', {
+                url: '/result/result-tips',
+                templateUrl: 'templates/result/result-tips.html',
+                controller: 'ApplyCtrl'
+            })
+
+            .state('result-summary', {
+                url: '/result/result-summary',
+                templateUrl: 'templates/result/result-summary.html',
+                controller: 'ApplyCtrl'
+            })
+
+            .state('rcap.business', {
                 url: '/business',
                 views: {
                     'tab-business': {
@@ -57,7 +94,7 @@ angular.module('rcap', ['ionic', 'rcap.controllers', 'rcap.services'])
                     }
                 }
             })
-            .state('tab.business-detail', {
+            .state('rcap.business-detail', {
                 url: '/business/:businessId',
                 views: {
                     'tab-business': {
@@ -67,7 +104,7 @@ angular.module('rcap', ['ionic', 'rcap.controllers', 'rcap.services'])
                 }
             })
 
-            .state('tab.account', {
+            .state('rcap.account', {
                 url: '/account',
                 views: {
                     'tab-account': {
@@ -77,7 +114,8 @@ angular.module('rcap', ['ionic', 'rcap.controllers', 'rcap.services'])
                 }
             });
 
-        // if none of the above states are matched, use this as the fallback
-        $urlRouterProvider.otherwise('/tab/dash');
+// if none of the above states are matched, use this as the fallback
+        $urlRouterProvider.otherwise('/rcap/dash');
 
-    });
+    })
+;

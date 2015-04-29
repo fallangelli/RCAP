@@ -1,8 +1,10 @@
-<ion-view view-title="信息服务">
+<ion-view view-title="查询记录">
     <ion-content>
+
+
         <div class="row row-top">
             <div class="col">
-                <div class="item item-avatar">
+                <div class="item item-avatar item-text-wrap">
                     <img src="./img/ask.png">
 
                     <h2>申请</h2>
@@ -11,12 +13,12 @@
                 </div>
             </div>
             <div class="col">
-                <div class="item item-avatar">
+                <div class="item item-avatar item-text-wrap">
                     <img src="./img/replay.png">
 
                     <h2>查看</h2>
 
-                    <p>查看审核回复</p>
+                    <p>填写验证码，并查看</p>
                 </div>
             </div>
         </div>
@@ -29,7 +31,7 @@
                 </div>
 
                 <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="business in curr_business"
-                          type="item-text-wrap" href="#/tab/business/{{business.id}}">
+                          type="item-text-wrap" href="#/rcap/business/{{business.id}}">
 
 
                     <img ng-if="business.type=='10001'" src="./img/p_report.png">
@@ -53,7 +55,7 @@
                 </div>
 
                 <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="business in his_buisness"
-                          type="item-text-wrap" href="#/tab/business/{{business.id}}">
+                          type="item-text-wrap" href="#/rcap/business/{{business.id}}">
 
                     <img ng-if="business.type=='10001'" src="./img/p_report.png">
                     <img ng-if="business.type=='10002'" src="./img/p_info.png">
