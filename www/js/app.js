@@ -70,7 +70,7 @@ angular.module('rcap', ['ionic', 'rcap.controllers', 'rcap.services'])
             .state('result-select', {
                 url: '/result/result-select',
                 templateUrl: 'templates/result/result-select.html',
-                controller: 'ApplyCtrl'
+                controller: 'ResultCtrl'
             })
 
             .state('result-tips', {

@@ -2,55 +2,65 @@
 
     <ion-content>
 
+        <form ng-submit="request_result()" name="result-select-form">
+            <div class="list  list-inset">
 
-        <div class="list  list-inset">
+                <div class="item item-divider item-content">
+                    选择您要查看的信用信息
+                </div>
 
+                <label class="item item-radio">
+                    <input type="radio"
+                           ng-model="result_apply.type"
+                           value="tips">
 
-            <div class="item item-divider item-content">
-                选择您要查看的信用信息
+                    <div class="item-content">
+                        个人信用信息提示
+                    </div>
+                    <i class="radio-icon ion-checkmark"></i>
+                </label>
+
+                <label class="item item-radio">
+                    <input type="radio"
+                           ng-model="result_apply.type"
+                           value="summary">
+
+                    <div class="item-content">
+                        个人信用信息概要
+                    </div>
+                    <i class="radio-icon ion-checkmark"></i>
+                </label>
+
+                <label class="item item-radio">
+                    <input type="radio"
+                           ng-model="result_apply.type"
+                           value="report">
+
+                    <div class="item-content">
+                        个人信用报告
+                    </div>
+                    <i class="radio-icon ion-checkmark"></i>
+                </label>
+
             </div>
 
-            <label class="item item-radio">
-                <input type="radio" name="group">
+            <div class="list list-inset">
+                <label class="item item-input">
+                    <span class="input-label">身份验证码</span>
+                    <input type="text" ng-model="result_apply.CAPTCHA">
+                </label>
 
-                <div class="item-content">
-                    个人信用信息提示
-                </div>
-                <i class="radio-icon ion-checkmark"></i>
-            </label>
+            </div>
 
-            <label class="item item-radio">
-                <input type="radio" name="group">
-
-                <div class="item-content">
-                    个人信用信息概要
-                </div>
-                <i class="radio-icon ion-checkmark"></i>
-            </label>
-
-            <label class="item item-radio">
-                <input type="radio" name="group">
-
-                <div class="item-content">
-                    个人信用报告
-                </div>
-                <i class="radio-icon ion-checkmark"></i>
-            </label>
-
-        </div>
-
-        <div class="list list-inset">
-            <label class="item item-input">
-                <span class="input-label">身份验证码</span>
-                <input type="text">
-            </label>
-
-        </div>
-
-        <div class="button-bar">
-            <a href="#/result/result-summary" class="button button-positive">确定</a>
-        </div>
-
+            <div class="button-bar">
+                <button type="submit"
+                        class="button button-block button-positive btn-sub"
+                        ng-disabled="auth.submitted">
+                    <i class="ion-loading-c" ng-show="auth.submitted" style="float:left;margin-top:13px"></i>
+                    确定
+                </button>
+            </div>
+        </form>
 
     </ion-content>
 </ion-view>

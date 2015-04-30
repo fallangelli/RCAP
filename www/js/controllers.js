@@ -1,5 +1,41 @@
 angular.module('rcap.controllers', [])
 
+    .controller('ResultCtrl', function ($scope, $state, $ionicLoading, $timeout, $ionicPopup) {
+        $scope.result_apply = {};
+        $scope.request_result = function () {
+
+            if (!$scope.result_apply.type) {
+                $ionicPopup.alert({
+                    title: '错误提示',
+                    template: '请选择信息类型!'
+                });
+                return;
+            }
+
+            if (!$scope.result_apply.CAPTCHA) {
+                $ionicPopup.alert({
+                    title: '错误提示',
+                    template: '请输入验证码!'
+                });
+                return;
+            }
+
+            if ($scope.result_apply.type == 'tips')
+                $state.go('result-tips');
+            else if ($scope.result_apply.type == 'summary')
+                $state.go('result-summary');
+            //else if ($scope.result_apply.type == 'report')
+            //    $state.go('result-summary');
+
+            $ionicLoading.show({
+                template: '加载中...'
+            });
+            $timeout(function () {
+                $ionicLoading.hide();
+            }, 1000);
+        }
+    })
+
     .controller('DashCtrl', function ($scope) {
         var slider =
             Swipe(document.getElementById('slider'), {
